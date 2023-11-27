@@ -1,15 +1,17 @@
 <script setup>
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
-import Pagination from '../components/Pagination.vue';
-import TheWelcome from '../components/TheWelcome.vue'
+import Pagination from '@/components/Pagination.vue';
+import Login from '../components/Login.vue';
+
 </script>
 
 <template>
-  <Header.vue></Header.vue>
-  <Footer.vue></Footer.vue>
-  <Pagination.vue></Pagination.vue>
-  <main>
-    <TheWelcome />
-  </main>
+  
+ <h1>Hello</h1>
+ <Header/>
+ <Pagination/>
+ <Login/>
+ <Footer/>
+ 
 </template>
