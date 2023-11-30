@@ -5,10 +5,10 @@ import Pagination from '@/components/Pagination.vue';
 
 
 </script>
-
+ 
+</script>
 <template>
   
- <h1>Hello</h1>
  <Header/>
  <Pagination/>
  <Login/>
