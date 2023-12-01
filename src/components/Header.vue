@@ -1,13 +1,14 @@
 <script setup></script>
 <template>
-	<div>
-		<h1>Hola VUE</h1>
-		
-	</div>
+	<header>
+	<nav>
+    <RouterLink to="/perretes">Perretes</RouterLink>
+</nav>
+	</header>
+	
+	
 </template>
 <style lang="scss" scoped>
-h1{
-	color: blue;
-}
+
 
 </style>

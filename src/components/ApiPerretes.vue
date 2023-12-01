@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Esta es el componente ApiPerretes</h1>
+        <h4>Este es el componente ApiPerretes</h4>
     </div>
 </template>
 

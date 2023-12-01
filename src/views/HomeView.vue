@@ -1,17 +1,27 @@
 <script setup>
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
 import Pagination from '@/components/Pagination.vue';
-import Login from '@/components/Login.vue';
+import { ref, reactive, onBeforeMount, onMounted } from 'vue';
+
+
+
 
 </script>
 
 <template>
-  
- <h1>Hello</h1>
- <Header/>
- <Pagination/>
- <Login/>
- <Footer/>
- 
+    <main>
+        
+
+    </main>
+
+
+
+<Pagination/>
 </template>
+
+<style lang="scss" scoped>
+    .container-perretes-image {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+</style>
