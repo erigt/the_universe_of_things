@@ -1,7 +1,7 @@
 export default class Perretes {
 
-    constructor(name, image) {
-        this.name = name
+    constructor(breed, image) {
+        this.breed = breed
         this.image = image
     }
 

@@ -1,16 +1,10 @@
 <script setup>
 import { ref, reactive, onBeforeMount, onMounted } from 'vue'
-import PerretesRepository from '../components/repositories/Perretes/PerretesRepository';
-import PerretesService from '../services/perretes/PerretesService';
 
 let perretes = reactive([])
 let isLoaded = ref(false)
 
-const repository = new PerretesRepository()
-const service = new PerretesService(repository)
-
 onBeforeMount( async () => {
-    perretes = await service.index()
     isLoaded.value = true
 })
 

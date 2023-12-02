@@ -1,4 +1,4 @@
-import Amiibo from "../../models/perretes/perretes";
+import Perrete from "../../models/perrete/Perrete";
 
 export default class PerretesService {
 
@@ -11,8 +11,8 @@ export default class PerretesService {
     async index() {
         const perretes = await this.repository.getAll()
         
-        perretes.forEach(perretes => {
-            const perretesToAdd = new Perrete(perrete.name, perrete.image)
+        perretes.forEach(perrete => {
+            const perreteToAdd = new Perrete(perrete.name, perrete.image)
             this.perretes.push(perreteToAdd)
         });
 
