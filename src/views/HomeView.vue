@@ -2,6 +2,7 @@
 import { ref, reactive, onBeforeMount, onMounted } from 'vue';
 import Pagination from '@/components/Pagination.vue';
 import Perretes from '../models/perrete/Perrete';
+import LoginView from '@/components/Login.vue';
 
 
 let dogs = reactive([])
