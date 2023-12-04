@@ -1,21 +1,41 @@
 <script setup>
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
+import { ref, reactive, onBeforeMount, onMounted } from 'vue';
 import Pagination from '@/components/Pagination.vue';
 
 
 
+let dogs = reactive([])
+
+onBeforeMount(async () => {
+    const uri = 'https://dog.ceo/api/breeds/list/all'
+    const response = await fetch(uri)
+    const data = await response.json()
+
+    
+    for (const breed in data.message) {
+        let uriImg = `https://dog.ceo/api/breed/${breed}/images`
+        const response = await fetch(uriImg)
+        const data = await response.json()
+
+        let dog = new Perretes(breed, data.message[0])
+        dogs.push(dog)
+    }
+
+})
+
 </script>
- 
 
 <template>
-  <button style=" background-color: black; color: white; border: none; padding: 10px 20px; border-radius: 5px;">Favoritos</button>
-  
+    <main>
 
-  
- <Header/>
- <Pagination/>
- <Login/>
- <Footer/>
- 
+        <div class="card" v-for="dog in dogs">
+            <h4>{{ dog.breed }}</h4>
+            <img v-bind:src="dog.image" :alt="dog.breed" srcset="">
+            <img src="../components/icons/icon-I-like.png" alt="Icon I lke">
+        </div>
+
+    </main>
+    <Pagination />
 </template>
+
+<style lang="scss" scoped></style>
