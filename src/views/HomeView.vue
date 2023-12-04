@@ -19,6 +19,3 @@ import Pagination from '@/components/Pagination.vue';
  <Footer/>
  
 </template>
-<style>
-
-</style>
