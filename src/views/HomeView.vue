@@ -9,7 +9,7 @@ import Pagination from '@/components/Pagination.vue';
  
 
 <template>
-  <button>Favoritos</button>
+  <button style=" background-color: black; color: white; border: none; padding: 10px 20px; border-radius: 5px;">Favoritos</button>
   
 
   
@@ -19,3 +19,6 @@ import Pagination from '@/components/Pagination.vue';
  <Footer/>
  
 </template>
+<style>
+
+</style>
