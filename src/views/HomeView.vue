@@ -29,12 +29,40 @@ onBeforeMount(async () => {
     <main>
 
         <div class="card" v-for="dog in dogs">
-            <h4>{{ dog.breed }}</h4>
-            <img v-bind:src="dog.image" :alt="dog.breed" srcset="">
+            <h4 class="breed">{{ dog.breed }}</h4>
+            <img class="img" v-bind:src="dog.image" :alt="dog.breed" srcset="">
         </div>
 
     </main>
     <Pagination />
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+main {
+    background-color:#F4C3A0;
+}
+.breed {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: medium;
+    font-weight: bold;
+}
+.img {
+    height: 200px;
+    width: 200px;
+}
+
+.card {
+    display: grid;
+	grid-template-columns: 25px 25px 25px;
+	grid-template-rows: 30px 30px 30px;
+	gap: 2rem;
+	justify-content: center;
+	align-items: center;
+	margin: 3%;
+	padding: 5%;
+}
+
+
+</style>
