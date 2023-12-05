@@ -2,6 +2,7 @@
 import { ref, reactive, onBeforeMount, onMounted } from 'vue';
 import Pagination from '@/components/Pagination.vue';
 import Perretes from '../models/perrete/Perrete';
+import DogsDropdown from './components/DogsDropdown.vue';
 
 
 let dogs = reactive([])
