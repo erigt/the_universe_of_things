@@ -1,9 +1,6 @@
 
 <script>
-import { defineProps } from 'vue';
-const props = defineProps({
-    dog: Object
-})
+
 export default {
   data() {
     return {
