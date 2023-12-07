@@ -16,7 +16,7 @@ const route = useRoute();
 function login() {
   if (username.value == store.user.username&&password.value == store.user.password){
     store.user.isAuthenticated = true
-    const redirectPath = route.query.redirect || '/favorite'
+    const redirectPath = route.query.redirect || '/favorites'
     router.push(redirectPath)
   }
 }
