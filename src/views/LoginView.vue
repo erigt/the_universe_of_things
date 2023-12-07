@@ -28,7 +28,7 @@ function login() {
         <img class="logo" src="/src/assets/images/LogoSample_ByTailorBrands (1) 2.png">
     
     <form class="login-form" @submit.prevent="login">
-      <label for="username">Email:</label>
+      <label for="username">User:</label>
       <input class="input-field" type="text" v-model="username" required>
       
       <label for="password">Password:</label>
