@@ -42,7 +42,7 @@ div {
 
 
 label {
-  display: flex;
+ display: flex;
   margin-bottom: 8px;
 }
 
