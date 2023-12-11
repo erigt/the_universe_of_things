@@ -1,6 +1,6 @@
 <script setup>
 
-import { }
+import { ref } from "vue"; const color = ref()
 
 </script>
 
