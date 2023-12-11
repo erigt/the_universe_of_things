@@ -5,18 +5,27 @@ import Footer from '@/components/Footer.vue'
 import CheckLoging from '@/components/CheckLoging.vue'
 
 
+
+
+
+
 </script>
 
 <template>
-  <Header/>
-  
+  <header>
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/Login">Login</RouterLink>
+      <RouterLink to="/Favorites">Favorites</RouterLink>
+    </nav>
+  </header>
   <RouterView />
+
   
-  <Footer/>
 
   <CheckLoging/>
 
-
+ <Footer/>
 
 </template>
 

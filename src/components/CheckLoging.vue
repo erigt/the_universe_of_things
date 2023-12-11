@@ -1,7 +1,9 @@
 <script setup>
 
+import { }
+
 </script>
 
 
 <template>
-	<img :class=" { 'img-normal' } "
+	

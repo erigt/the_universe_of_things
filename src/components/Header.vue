@@ -2,7 +2,7 @@
 <template>
 	<header>
 	<nav>
-    <RouterLink to="/perretes">Perretes</RouterLink>
+		<RouterLink to="/login">Login</RouterLink>
 </nav>
 	</header>
 	
