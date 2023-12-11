@@ -3,11 +3,17 @@ export default {
   data() {
     return {
       dogBreeds: [],
-      selectedBreed: null
+      selectedBreed: null,
+      selectedBreedImages: []
     };
   },
   mounted() {
     this.getDogBreeds();
+  },
+  watch: {
+    selectedBreed() {
+      this.getImagesByBreed();
+    }
   },
   methods: {
     async getDogBreeds() {
@@ -18,56 +24,63 @@ export default {
       } catch (error) {
         console.error('Error al obtener las razas de perros:', error);
       }
+    },
+    async getImagesByBreed() {
+      try {
+        const apiDogs = new ApiDogs();
+        const breedImages = await apiDogs.getBreedImages(this.selectedBreed);
+        this.selectedBreedImages = breedImages;
+      } catch (error) {
+        console.error('Error al obtener las imágenes de la raza:', error);
+      }
     }
   }
 };
 
 class ApiDogs {
-  #Url;
+  #BaseUrl;
 
   constructor() {
-    this.#Url = 'https://dog.ceo/api/breeds/list/all';
+    this.#BaseUrl = 'https://dog.ceo/api/';
   }
 
   async getAll() {
-    const response = await fetch(this.#Url);
+    const response = await fetch(`${this.#BaseUrl}breeds/list/all`);
     const json = await response.json();
 
-    let charactersPure = [];
-    let charactersReturn = [];
+    let breeds = [];
 
-    
     for (const breed in json.message) {
-      const breedResponse = await fetch(`https://dog.ceo/api/breed/${breed}/images/random`);
-      const breedJson = await breedResponse.json();
-
-      charactersPure.push({
-        name: breed,
-        image: breedJson.message
+      breeds.push({
+        name: breed
       });
     }
 
-    for (const character of charactersPure) {
-      const characterToAdd = {
-        name: character.name,
-        image: character.image,
-        
-      };
+    return breeds;
+  }
 
-      charactersReturn.push(characterToAdd);
-    }
+  async getBreedImages(breed) {
+    const response = await fetch(`${this.#BaseUrl}breed/${breed}/images/random/3`);
+    const json = await response.json();
 
-    return charactersReturn;
+    return json.message;
   }
 }
 </script>
 
 <template>
   <div>
-    <label for="dogBreed">Selecciona una raza :</label>
+    <label for="dogBreed">Selecciona una raza:</label>
     <select id="dogBreed" v-model="selectedBreed">
       <option v-for="breed in dogBreeds" :key="breed" :value="breed">{{ breed }}</option>
     </select>
+
+    <div v-if="selectedBreedImages.length > 0">
+      <h2>Fotos de la raza seleccionada:</h2>
+      <div v-for="image in selectedBreedImages" :key="image">
+        <img :src="image" alt="Dog Image" style="max-width: 300px; margin: 10px;">
+      </div>
+    </div>
   </div>
 </template>
 
