@@ -22,6 +22,13 @@ onBeforeMount(async () => {
     }
 
 })
+import { useChangeHeart } from '../src/models/perrete/ChangeHeart.js';
+
+const {
+  corazonTransparente,
+  cambiarColor,
+  corazonSrc,
+} = useChangeHeart();
 
 </script>
 

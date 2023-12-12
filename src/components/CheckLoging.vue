@@ -3,6 +3,13 @@ import { watchEffect} from 'vue';
 import { ref } from 'vue';
 import { useRouter,useRoute } from 'vue-router';
 import { useAuthStore } from '../assets/store/auth';
+import { useChangeHeart } from '../src/models/perrete/ChangeHeart.js';
+
+const {
+  
+
+  
+} = useChangeHeart();
 
 const username = ref('');
 const password = ref('');
@@ -11,7 +18,7 @@ const router = useRouter();
 const route = useRoute();
 const corazonTransparente = ref(true);
 const cambiarColor = () => {
-  corazonTransparente.value = !corazonTransparente.value;
+  corazonTransparente.value = !corazonTransparente.value; 
 };
 
 const usuarioLogeado = ref(false);
