@@ -7,13 +7,10 @@ const corazonTransparente = ref(true);
 const cambiarColor = () => {
   corazonTransparente.value = !corazonTransparente.value;
 };
-</script>
 
-<script setup>
 import { ref } from 'vue';
 
 const usuarioLogeado = ref(false);
-const corazonTransparente = ref(true);
 
 const manejarClicCorazon = () => {
   if (usuarioLogeado.value) {
@@ -23,9 +20,6 @@ const manejarClicCorazon = () => {
   }
 };
 
-const cambiarColor = () => {
-  corazonTransparente.value = !corazonTransparente.value;
-};
 
 const abrirFormulario = () => {
   
