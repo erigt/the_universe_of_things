@@ -1,12 +1,18 @@
 <script setup>
-
+import { watchEffect} from 'vue';
 import { ref } from 'vue';
+import { useRouter,useRoute } from 'vue-router';
+import { useAuthStore } from '../assets/store/auth';
 
+const username = ref('');
+const password = ref('');
+const store = useAuthStore()
+const router = useRouter();
+const route = useRoute();
 const corazonTransparente = ref(true);
 const cambiarColor = () => {
   corazonTransparente.value = !corazonTransparente.value;
 };
-const store = useAuthStore()
 
 const usuarioLogeado = ref(false);
 
@@ -24,31 +30,33 @@ const abrirFormulario = () => {
     const redirectPath = route.query.redirect || '/loging'
     router.push(redirectPath)
 
+
   console.log("Abrir formulario de inicio de sesión");
-};
+  }};
 
 const corazonSrc = ref("/src/components/icons/Image20231205125028.png");
 
 watchEffect(() => {
   corazonSrc.value = corazonTransparente.value
     ? "/src/components/icons/Image20231205125028.png"
-    : "/src/components/icons/corazon.png";
+    : "/src/components/icons/corazon.png"
 });
+
 </script>
 
 <template>
 <div>
     <img
       v-if="corazonTransparente"
-      :src="require('/src/components/icons/Image20231205125028.png')"
+      :src="'/src/components/icons/Image20231205125028.png'"
       alt="Corazón Transparente"
-      @click="cambiarColor"
+      @click="manejarClicCorazon"
     />
     <img
       v-else
       :src="require('/src/components/icons/corazon.png')"
       alt="Corazón Rojo"
-      @click="cambiarColor"
+      @click="manejarClicCorazon"
     />
   </div>
 

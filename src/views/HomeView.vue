@@ -39,6 +39,7 @@ onBeforeMount(async () => {
 
     </main>
     <Pagination />
+    
 </template>
 
 <style lang="scss" scoped>
