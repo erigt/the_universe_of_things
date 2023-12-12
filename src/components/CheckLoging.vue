@@ -3,12 +3,10 @@
 import { ref } from 'vue';
 
 const corazonTransparente = ref(true);
-
 const cambiarColor = () => {
   corazonTransparente.value = !corazonTransparente.value;
 };
-
-import { ref } from 'vue';
+const store = useAuthStore()
 
 const usuarioLogeado = ref(false);
 
@@ -20,16 +18,17 @@ const manejarClicCorazon = () => {
   }
 };
 
-
 const abrirFormulario = () => {
-  
+  if (username.value == store.user.username&&password.value == store.user.password){
+    store.user.isAuthenticated = false
+    const redirectPath = route.query.redirect || '/loging'
+    router.push(redirectPath)
 
   console.log("Abrir formulario de inicio de sesión");
 };
 
 const corazonSrc = ref("/src/components/icons/Image20231205125028.png");
 
-// Actualiza la fuente del corazón según el estado de autenticación
 watchEffect(() => {
   corazonSrc.value = corazonTransparente.value
     ? "/src/components/icons/Image20231205125028.png"
