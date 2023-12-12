@@ -3,7 +3,7 @@ import { watchEffect} from 'vue';
 import { ref } from 'vue';
 import { useRouter,useRoute } from 'vue-router';
 import { useAuthStore } from '../assets/store/auth';
-import { useChangeHeart } from '../src/models/perrete/ChangeHeart.js';
+import { useChangeHeart } from '/src/models/perrete/ChangeHeart.js';
 
 const {
   

@@ -22,7 +22,7 @@ onBeforeMount(async () => {
     }
 
 })
-import { useChangeHeart } from '../src/models/perrete/ChangeHeart.js';
+import { useChangeHeart } from '/src/models/perrete/ChangeHeart.js';
 
 const {
   corazonTransparente,
