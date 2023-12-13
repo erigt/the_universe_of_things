@@ -73,19 +73,3 @@ function login() {
 }
 </style>
 
-
-
-
-
-
-
-
-
-
-
-
-</script>
-
-<template>
- 
-</template>
