@@ -5,18 +5,7 @@ import Pagination from '@/components/Pagination.vue';
 </script>
 
 <template>
-  <main>
-
-<div class="card" v-for="dog in dogs">
-    <p class="breed">{{ dog.breed }}</p>
-<div class="container-img">
-    <img class="img" v-bind:src="dog.image" :alt="dog.breed" srcset="">
-    <img class="heart" src="/src/components/icons/Image20231205125028.png" alt="corazon">
-    <img class="heart2" src="/src/components/icons/corazon.png" alt="corazón">
-</div>
-</div>
-
-</main>
+  <Pagination/>
   <ApiPerretes/>
 </template>
 
