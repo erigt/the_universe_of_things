@@ -25,8 +25,8 @@ header {
 	align-items: center;
 
 	img {
-	height: 150px;
-	width: 150px;
+	height: 125px;
+	width: 125px;
 }
 nav {
 	width: 12rem;
