@@ -40,7 +40,7 @@ const {
             <p class="breed">{{ dog.breed }}</p>
         <div class="container-img">
             <img class="img" v-bind:src="dog.image" :alt="dog.breed" srcset="">
-            <CheckLoging/>
+            <CheckLoging></CheckLoging>
             <!-- <img class="heart" src="/src/components/icons/Image20231205125028.png" alt="corazon">
             <img class="heart2" src="/src/components/icons/corazon.png" alt="corazón"> -->
         </div>
