@@ -2,7 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
-import DogsDropdown from '@/components/DogsDropdown.vue';
+
 
 
 
@@ -22,7 +22,7 @@ import DogsDropdown from '@/components/DogsDropdown.vue';
   </header>
   
 
-  <DogsDropdown/>
+  
   
   
   <RouterView />

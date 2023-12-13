@@ -3,6 +3,7 @@ import { ref, reactive, onBeforeMount, onMounted } from 'vue';
 import Pagination from '@/components/Pagination.vue';
 import Perretes from '../models/perrete/Perrete';
 import CheckLoging from '@/components/CheckLoging.vue';
+import DogsDropdown from '@/components/DogsDropdown.vue';
 
 
 
@@ -35,6 +36,7 @@ const {
 </script>
 
 <template>
+    <DogsDropdown/>
     <main>
 
         <div class="card" v-for="dog in dogs">
