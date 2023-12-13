@@ -2,9 +2,16 @@
 import { ref, reactive, onBeforeMount, onMounted } from 'vue';
 import Pagination from '@/components/Pagination.vue';
 import Perretes from '../models/perrete/Perrete';
+import {useAuthStore} from '../assets/store/auth'
+import { useRouter,useRoute } from 'vue-router';
 
 
 let dogs = reactive([])
+const dogsFavorites = reactive([]);
+const store = useAuthStore()
+
+const router = useRouter();
+const route = useRoute();
 
 onBeforeMount(async () => {
     const uri = 'https://dog.ceo/api/breeds/list/all'
@@ -23,6 +30,18 @@ onBeforeMount(async () => {
 
 })
 
+function addToFavorites(){
+    if (store.user.isAuthenticated === false) {
+    const redirectPath = route.query.redirect || '/login';
+    router.push(redirectPath);
+}else {
+    dogsFavorites.push(dog)
+    const redirectPath = route.query.redirect || '/favorites';
+    router.push(redirectPath);
+}
+}
+
+
 </script>
 
 <template>
@@ -32,7 +51,7 @@ onBeforeMount(async () => {
             <p class="breed">{{ dog.breed }}</p>
         <div class="container-img">
             <img class="img" v-bind:src="dog.image" :alt="dog.breed" srcset="">
-            <img class="heart" src="/src/components/icons/Image20231205125028.png" alt="corazon">
+            <img class="heart" @click="addToFavorites()" src="/src/components/icons/Image20231205125028.png" alt="corazon">
             <img class="heart2" src="/src/components/icons/corazon.png" alt="corazón">
         </div>
         </div>
