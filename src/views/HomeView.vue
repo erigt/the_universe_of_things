@@ -1,12 +1,9 @@
 <script setup>
 import { ref, reactive, onBeforeMount, onMounted } from 'vue';
 import Pagination from '@/components/Pagination.vue';
-<<<<<<< HEAD
-=======
 import Perretes from '../models/perrete/Perrete';
 import CheckLoging from '@/components/CheckLoging.vue';
 import DogsDropdown from '@/components/DogsDropdown.vue';
->>>>>>> dev
 
 
 
@@ -43,11 +40,6 @@ const {
     <main>
 
         <div class="card" v-for="dog in dogs">
-<<<<<<< HEAD
-            <h4>{{ dog.breed }}</h4>
-            <img v-bind:src="dog.image" :alt="dog.breed" srcset="">
-            <img src="../components/icons/icon-I-like.png" alt="Icon I lke">
-=======
             <p class="breed">{{ dog.breed }}</p>
         <div class="container-img">
             <img class="img" v-bind:src="dog.image" :alt="dog.breed" srcset="">
@@ -55,7 +47,6 @@ const {
             <!-- <img class="heart" src="/src/components/icons/Image20231205125028.png" alt="corazon">
             <img class="heart2" src="/src/components/icons/corazon.png" alt="corazón"> -->
         </div>
->>>>>>> dev
         </div>
 
     </main>

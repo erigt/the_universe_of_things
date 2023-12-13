@@ -30,16 +30,7 @@ import Footer from '@/components/Footer.vue'
   <Footer />
   
 
-<<<<<<< HEAD
   
-=======
-
-  
-
-  <!-- <CheckLoging/> -->
-
- 
->>>>>>> dev
 
 </template>
 
