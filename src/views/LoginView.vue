@@ -32,14 +32,19 @@ function login() {
   </div>
 </template>
 <style scoped>
+body {
+  margin: 0;
+}
 .logo{
     width:40%;
     margin-left: 28%;
 }
 .login-container {
+  justify-content: center;
   width: 450px;
   height: 400px;
-  margin: auto;
+  margin:5%;
+  margin-left: 30%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -49,7 +54,7 @@ function login() {
 .login-form {
   display: flex;
   flex-direction: column;
-  padding:10px ;
+  padding:20px ;
 }
 .input-field {
   margin-bottom: 15px;
