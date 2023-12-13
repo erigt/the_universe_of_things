@@ -5,16 +5,41 @@ import Footer from '@/components/Footer.vue'
 
 
 
+
+
+
+
+
 </script>
 
 <template>
-  <Header/>
+  <header>
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/Login">Login</RouterLink>
+      <RouterLink to="/Favorites">Favorites</RouterLink>
+    </nav>
+  </header>
   
-  <RouterView />
-  
-  <Footer/>
 
   
+  
+  
+  <RouterView />
+
+  <Footer />
+  
+
+<<<<<<< HEAD
+  
+=======
+
+  
+
+  <!-- <CheckLoging/> -->
+
+ 
+>>>>>>> dev
 
 </template>
 
