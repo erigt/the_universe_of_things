@@ -75,16 +75,28 @@ class ApiDogs {
       <option v-for="breed in dogBreeds" :key="breed" :value="breed">{{ breed }}</option>
     </select>
 
-    <div v-if="selectedBreedImages.length > 0">
-      <h2>Fotos de la raza seleccionada:</h2>
+    <div class="photo" v-if="selectedBreedImages.length > 0">
+     
       <div v-for="image in selectedBreedImages" :key="image">
-        <img :src="image" alt="Dog Image" style="max-width: 300px; margin: 10px;">
+        <img class="dog-image" :src="image" alt="Dog Image" style="max-width: 500px; margin: 10px;">
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+.photo {
+  margin-top: 10px;
+  margin-left: 40%;
+}
+.dog-image {
+  max-width: 200%; 
+  height: auto;    
+  margin: 10px 0; 
+  transition: transform 0.3s ease-in-out;
+}
+.dog-image:hover {
+  transform: scale(8.8);}
 div {
   margin: 20px;
 }

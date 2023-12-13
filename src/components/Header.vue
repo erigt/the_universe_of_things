@@ -7,9 +7,15 @@
 	
 
 		<nav>
+			<div class="nav-link">
       <RouterLink to="/">Home</RouterLink>
+			</div>
+			<div class="nav-link">
       <RouterLink to="/Login">Login</RouterLink>
+			</div>
+			<div class="nav-link">
       <RouterLink to="/Favorites">Favorites</RouterLink>
+			</div>
     </nav>
 
 	</header>
@@ -29,13 +35,15 @@ header {
 	width: 125px;
 }
 nav {
-	width: 12rem;
+	width: 22rem;
 	display: flex;
 	justify-content: space-around;
 
-	a {
-		text-decoration: none;
-	}
+	.nav-link {
+      text-decoration: none;
+      margin: 0.6rem;
+	  
+    }
 	
 }
 
