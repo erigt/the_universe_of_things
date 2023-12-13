@@ -4,6 +4,7 @@ import Pagination from '@/components/Pagination.vue';
 import Perretes from '../models/perrete/Perrete';
 
 
+
 let dogs = reactive([])
 
 onBeforeMount(async () => {
