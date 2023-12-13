@@ -66,3 +66,7 @@ p  {
 
 
 </style>
+  
+  <Pagination/>
+  
+</template>
