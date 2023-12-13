@@ -92,11 +92,14 @@ div {
 label {
   display: flex;
   margin-bottom: 8px;
+  float: right;
 }
 
 select {
-  width: 30%;
-  padding: 8px;
+  float: right;
+  width: 20%;
+  padding: 7px;
+  margin-left:70% ;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
