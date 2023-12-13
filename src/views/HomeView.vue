@@ -35,8 +35,6 @@ function addToFavorites(){
     const redirectPath = route.query.redirect || '/login';
     router.push(redirectPath);
 }else {
-    dogsFavorites.push(dog)
-    const redirectPath = route.query.redirect || '/favorites';
     router.push(redirectPath);
 }
 }
