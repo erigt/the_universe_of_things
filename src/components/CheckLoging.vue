@@ -24,22 +24,22 @@ const cambiarColor = () => {
 const usuarioLogeado = ref(false);
 
 const manejarClicCorazon = () => {
-  if (usuarioLogeado.value) {
+  if (store.user.isAuthenticated === true) {
     cambiarColor();
   } else {
-    abrirFormulario();
+    addToFavorites();
   }
 };
 
-const abrirFormulario = () => {
-  if (username.value == store.user.username&&password.value == store.user.password){
-    store.user.isAuthenticated = false
-    const redirectPath = route.query.redirect || '/loging'
-    router.push(redirectPath)
-
-
-  console.log("Abrir formulario de inicio de sesión");
-  }};
+function addToFavorites(){
+    if (store.user.isAuthenticated === false) {
+    const redirectPath = route.query.redirect || '/login';
+    router.push(redirectPath);
+}else {
+   
+    router.push(redirectPath);
+}
+};
 
 const corazonSrc = ref("/src/components/icons/Image20231205125028.png");
 

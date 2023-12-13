@@ -2,7 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
-import CheckLoging from '@/components/CheckLoging.vue'
+// import CheckLoging from '@/components/CheckLoging.vue'
 
 
 
@@ -23,7 +23,7 @@ import CheckLoging from '@/components/CheckLoging.vue'
 
   
 
-  <CheckLoging/>
+  <!-- <CheckLoging/> -->
 
  <Footer/>
 

@@ -2,6 +2,7 @@
 import { ref, reactive, onBeforeMount, onMounted } from 'vue';
 import Pagination from '@/components/Pagination.vue';
 import Perretes from '../models/perrete/Perrete';
+import CheckLoging from '@/components/CheckLoging.vue';
 
 
 let dogs = reactive([])
@@ -39,8 +40,9 @@ const {
             <p class="breed">{{ dog.breed }}</p>
         <div class="container-img">
             <img class="img" v-bind:src="dog.image" :alt="dog.breed" srcset="">
-            <img class="heart" src="/src/components/icons/Image20231205125028.png" alt="corazon">
-            <img class="heart2" src="/src/components/icons/corazon.png" alt="corazón">
+            <CheckLoging/>
+            <!-- <img class="heart" src="/src/components/icons/Image20231205125028.png" alt="corazon">
+            <img class="heart2" src="/src/components/icons/corazon.png" alt="corazón"> -->
         </div>
         </div>
 
