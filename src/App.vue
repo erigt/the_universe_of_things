@@ -9,6 +9,7 @@ import DogsDropdown from '@/components/DogsDropdown.vue';
 
 
 
+
 </script>
 
 <template>
@@ -32,7 +33,9 @@ import DogsDropdown from '@/components/DogsDropdown.vue';
 
   
 
+  <!-- <CheckLoging/> -->
 
+ <Footer/>
 
 </template>
 
