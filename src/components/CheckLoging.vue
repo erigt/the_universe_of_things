@@ -43,3 +43,8 @@ watchEffect(() => {
     : "/src/components/icons/corazon.png";
 });
 </script>
+<style scoped>
+img{
+  cursor: pointer;
+}
+</style>

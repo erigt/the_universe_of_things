@@ -96,7 +96,7 @@ class ApiDogs {
   transition: transform 0.3s ease-in-out;
 }
 .dog-image:hover {
-  transform: scale(8.8);}
+  transform: scale(1.1);}
 div {
   margin: 20px;
 }
@@ -119,6 +119,6 @@ select {
 }
 
 select:hover {
-  color: bisque;
+  color: rgb(93, 7, 134);
 }
 </style>
