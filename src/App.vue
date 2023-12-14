@@ -6,6 +6,7 @@ import Footer from '@/components/Footer.vue'
 
 <template>
   
+  
 
   
 
@@ -17,6 +18,7 @@ import Footer from '@/components/Footer.vue'
   <Footer />
   
 
+  
 
 </template>
 

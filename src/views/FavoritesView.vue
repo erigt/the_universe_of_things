@@ -1,9 +1,3 @@
-<script setup>
-import Pagination from '@/components/Pagination.vue';
-
-
-</script>
-
 <template>
   <h2>Hola paisano estas en favoritos</h2>
     

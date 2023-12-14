@@ -33,19 +33,19 @@ header {
 	img {
 	height: 125px;
 	width: 125px;
-}
-nav {
-	width: 22rem;
-	display: flex;
-	justify-content: space-around;
+	}
+	nav {
+		width: 22rem;
+		display: flex;
+		justify-content: space-around;
 
-	.nav-link {
-      text-decoration: none;
-      margin: 0.6rem;
-	  
-    }
-	
-}
+		a {
+		text-decoration: none;
+		margin: 0.6rem;
+		
+		}
+		
+	}
 
 }
 
