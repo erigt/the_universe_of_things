@@ -25,13 +25,9 @@ onBeforeMount(async () => {
     }
 
 })
-import { useChangeHeart } from '/src/models/perrete/ChangeHeart.js';
 
-const {
-  corazonTransparente,
-  cambiarColor,
-  corazonSrc,
-} = useChangeHeart();
+
+
 
 </script>
 
@@ -44,8 +40,7 @@ const {
         <div class="container-img">
             <img class="img" v-bind:src="dog.image" :alt="dog.breed" srcset="">
             <CheckLoging/>
-            <!-- <img class="heart" src="/src/components/icons/Image20231205125028.png" alt="corazon">
-            <img class="heart2" src="/src/components/icons/corazon.png" alt="corazón"> -->
+            
         </div>
         </div>
 

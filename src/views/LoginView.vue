@@ -1,36 +1,48 @@
 <script setup>
 import { ref } from 'vue';
-import { useRouter,useRoute } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 import { useAuthStore } from '../assets/store/auth';
-const username = ref('');
-const password = ref('');
-const store = useAuthStore()
+
+const { user, login } = useAuthStore();
 const router = useRouter();
 const route = useRoute();
-function login() {
-  if (username.value == store.user.username&&password.value == store.user.password){
-    store.user.isAuthenticated = true
-    const redirectPath = route.query.redirect || '/'
-    router.push(redirectPath)
-  } else {
-    const redirectPath = route.query.redirect || '/login'
-    router.push(redirectPath)
+
+const username = ref('');
+const password = ref('');
+const isLoading = ref(false);
+
+const handleSubmit = async () => {
+  isLoading.value = true;
+  try {
+    await login(username.value, password.value);
+    const redirectPath = route.query.redirect || '/';
+    router.push(redirectPath);
+  } catch (error) {
+    console.error('Error during login:', error);
+  } finally {
+    isLoading.value = false;
   }
-}
+};
 </script>
 
 <template>
-    <div class="login-container">
-        <img class="logo" src="/src/assets/images/LogoSample_ByTailorBrands (1) 2.png">
-    <form class="login-form" @submit.prevent="login">
+  <div class="login-container">
+    <img class="logo" src="/src/assets/images/LogoSample_ByTailorBrands (1) 2.png">
+    <form class="login-form" @submit.prevent="handleSubmit">
       <label for="username">User:</label>
       <input class="input-field" type="text" v-model="username" required>
       <label for="password">Password:</label>
       <input class="input-field" type="password" v-model="password" required>
-      <button  class="login-button" type="submit">Login</button>
+      <button class="login-button" type="submit" :disabled="isLoading">
+        {{ isLoading ? 'Logging in...' : 'Login' }}
+      </button>
     </form>
   </div>
 </template>
+
+
+
+
 <style scoped>
 .logo{
     width:40%;

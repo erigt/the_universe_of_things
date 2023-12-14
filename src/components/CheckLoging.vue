@@ -1,77 +1,45 @@
+<template>
+  <div>
+    <img
+      :src="corazonSrc"
+      alt="Corazón"
+      @click="manejarClicCorazon"
+    />
+  </div>
+</template>
+
 <script setup>
-import { watchEffect} from 'vue';
-import { ref } from 'vue';
-import { useRouter,useRoute } from 'vue-router';
+import { ref, watchEffect } from 'vue';
 import { useAuthStore } from '../assets/store/auth';
-import { useChangeHeart } from '/src/models/perrete/ChangeHeart.js';
+import { useRouter, useRoute } from 'vue-router';
 
-const {
-  
 
-  
-} = useChangeHeart();
-
-const username = ref('');
-const password = ref('');
-const store = useAuthStore()
+const { user, addToFavorites } = useAuthStore();
 const router = useRouter();
 const route = useRoute();
+
 const corazonTransparente = ref(true);
+const corazonSrc = ref("/src/components/icons/Image20231205125028.png");
+
 const cambiarColor = () => {
   corazonTransparente.value = !corazonTransparente.value; 
 };
 
-const usuarioLogeado = ref(false);
-
 const manejarClicCorazon = () => {
-  if (store.user.isAuthenticated === true) {
+  if (user.isAuthenticated) {
     cambiarColor();
+    const breed = 'Nombre de la raza'; 
+    const image = 'URL de la imagen'; 
+    addToFavorites({ breed, image });
   } else {
-    addToFavorites();
+    const redirectPath = route.fullPath;
+    router.push(`/login?redirect=${redirectPath}`);
   }
 };
-
-function addToFavorites(){
-    if (store.user.isAuthenticated === false) {
-    const redirectPath = route.query.redirect || '/login';
-    router.push(redirectPath);
-}else {
-   
-    router.push(redirectPath);
-}
-};
-
-const corazonSrc = ref("/src/components/icons/Image20231205125028.png");
 
 watchEffect(() => {
   corazonSrc.value = corazonTransparente.value
     ? "/src/components/icons/Image20231205125028.png"
-    : "/src/components/icons/corazon.png"
+    : "/src/components/icons/corazon.png";
 });
-
 </script>
-
-<template>
-<div>
-    <img
-      v-if="corazonTransparente"
-      :src="'/src/components/icons/Image20231205125028.png'"
-      alt="Corazón Transparente"
-      @click="manejarClicCorazon"
-    />
-    <img
-      v-else
-      :src="require('/src/components/icons/corazon.png')"
-      alt="Corazón Rojo"
-      @click="manejarClicCorazon"
-    />
-  </div>
-
-</template>
-
-<style>
-img {
-  width: 50px;
-  cursor: pointer;
-}
-</style>
